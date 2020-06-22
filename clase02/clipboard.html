@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de uso de dependencia</title>
+</head>
+<body>
+  <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio, illo veritatis vel veniam
+    facere omnis error ea, similique itaque aperiam voluptatem earum consequatur quis, deserunt obcaecati perspiciatis hic
+    voluptates?</p>
+  <button class="btn" data-clipboard-target="#paragraph">Copiar</button>
+
+
+  <script src="../node_modules/clipboard/dist/clipboard.min.js"></script>
+  <script>
+    new ClipboardJS('.btn');
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>closures</title>
+</head>
+<body>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+
+  <script>
+    
+    function counter() {
+        var i = 0;
+        return function () {
+          return i++;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let paragraphs = document.querySelectorAll('p');
+      paragraphs.forEach(function( item ) {
+        let clickCounter = counter();
+
+        item.addEventListener('click', function() {
+          item.innerText = clickCounter();
+        });
+
+        item.innerText = clickCounter();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "js-avanzado",
+  "version": "1.0.0",
+  "description": "Ejemplos del curso de js avanzado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "es-dev-server --node-resolve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "introducir..."
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "npm",
+    "curso",
+    "escuelait"
+  ],
+  "author": "Miguel A Alvarez",
+  "license": "MIT",
+  "dependencies": {
+    "clipboard": "^2.0.6",
+    "date-fns": "^2.14.0"
+  },
+  "devDependencies": {
+    "es-dev-server": "^1.55.0"
+  }
+}

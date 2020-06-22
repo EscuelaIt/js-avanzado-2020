@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo con fechas</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    span {
+      display: inline-block;
+      width: 40px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    input {
+      width: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    <span>Dia:</span> <input type="text" id="dia" value="1">
+  </p>
+  <p>
+    <span>Mes:</span> <input type="text" id="mes" value="6">
+  </p>
+  <p>
+    <span>Año:</span> <input type="text" id="anyo" value="2020">
+  </p>
+  <p>
+    <button class="btn">Convertir</button>
+  </p>
+  <p id="date"></p>
+  <script src="./js/dates.js" type="module"></script>
+</body>
+
+</html>
