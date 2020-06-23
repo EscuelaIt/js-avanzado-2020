@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "es-dev-server --node-resolve --watch"
+    "serve": "es-dev-server --node-resolve --watch",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "date-fns": "^2.14.0"
   },
   "devDependencies": {
-    "es-dev-server": "^1.55.0"
+    "es-dev-server": "^1.55.0",
+    "eslint": "^7.3.1"
   }
 }
