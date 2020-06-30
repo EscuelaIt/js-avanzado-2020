@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspectos de this</title>
+</head>
+
+<body>
+  <p id="paragraph">Soy un párrafo</p>
+
+  <script>
+    // this en una función es el contexto global
+    function f1() {
+      return this;
+    }
+    console.log(this === window);
+
+    // this en un objeto es una referencia al objeto
+    let obj = {
+      who: 'Obj',
+      introduceYourself: function () {
+        console.log('Soy ' + this.who);
+      }
+    }
+    obj.introduceYourself();
+
+    // this en un manejador de evento es el objeto que recibe el evento
+    document.getElementById('paragraph').addEventListener('click', function () {
+      console.log(this);
+    });
+
+    // en setTimeout pierdo el contexto y se va al contexto global
+    let other = {
+      who: 'other',
+      introduceYourself: function () {
+        console.log('Soy ' + this.who);
+        setTimeout(function () {
+          console.log('soy settimeout', this);
+        }, 1000);
+      }
+    }
+    other.introduceYourself();
+
+    let Person = function (name) {
+      this.name = name;
+      console.log('soy funcion constructora', this);
+    }
+    // El operador new sobreescribe el contexto
+    new Person('Miguel');
+    // Si no usamos new el contexto sería el objeto global
+    Person('Alvaro');
+    console.log(window.name);
+
+  </script>
+</body>
+
+</html>

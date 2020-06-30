@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspectos de this</title>
+</head>
+
+<body>
+  <p id="paragraph">Soy un párrafo</p>
+  
+  <p id="paragraph2">Soy un párrafo 2</p>
+
+  <script>
+    // this en el contexto global sigue siendo el global
+    f1 = () => {
+      return this;
+    }
+    console.log(this === window);
+
+    // en un método de un objeto global 
+    let obj = {
+      showThis: () => console.log('showThis', this)
+    }
+    obj.showThis();
+
+    window.that = 'hohoho';
+
+    // Para explicar el ejemplo anterior,
+    // aquí se ve que dentro del objeto this era el objeto global
+    let obj2 = {
+      that: this,
+      showThat: function () {
+        console.log('that', this.that);
+      },
+      showThat2: () => { console.log( this.that ) }
+    }
+    obj2.showThat();
+    obj2.showThat2();
+
+    // this en un manejador de evento tampoco redefine el contexto
+    document.getElementById('paragraph').addEventListener('click', () => {
+      console.log('manejador', this);
+    });
+
+    // this en un manejador de evento es el objeto que recibe el evento
+      document.getElementById('paragraph2').addEventListener('click', function () {
+        console.log(this);
+      });
+
+    // en setTimeout consigo no perder el contexto con una arrow function
+    let other = {
+      who: 'other',
+      introduceYourself: function () {
+        setTimeout(() => {
+          console.log('Soy ' + this.who);
+        }, 1000);
+      }
+    }
+    other.introduceYourself();
+
+
+  </script>
+</body>
+
+</html>
