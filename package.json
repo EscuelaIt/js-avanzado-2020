@@ -23,7 +23,8 @@
   "license": "MIT",
   "dependencies": {
     "clipboard": "^2.0.6",
-    "date-fns": "^2.14.0"
+    "date-fns": "^2.14.0",
+    "lit-html": "^1.2.1"
   },
   "devDependencies": {
     "es-dev-server": "^1.55.0",
